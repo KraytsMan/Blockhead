@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: blockhead
+  datasource:
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3307/blockhead?useUnicode=true&characterEncoding=UTF-8&useSSL=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+     username: kraytsman
+     password: 1111
+     dbcp:
+       max-active: 20
+       test-while-idle: true
+       time-between-eviction-runs-millis: 3600000
+       validation-query: Select 1
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-nodes: localhost:9300
+wordsApi:
+  baseUrl: https://wordsapiv1.p.mashape.com
+  apiKey: D418RnmwCcmshvZTnAwHPVrp115Tp1QCGPjjsnHVYuXPHKDCAV
